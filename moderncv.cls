@@ -53,6 +53,13 @@
 % font type options
 \DeclareOption{sans}{\AtBeginDocument{\renewcommand{\familydefault}{\sfdefault}}}
 \DeclareOption{roman}{\AtBeginDocument{\renewcommand{\familydefault}{\rmdefault}}}
+\DeclareOption{bitstream}{\AtBeginDocument{%
+    \fontencoding{T1}%
+    \fontfamily{bitstream-charter}%
+    \fontseries{m}%
+    \fontshape{it}%
+    \fontsize{12}{15}%
+    \selectfont}}
 
 % draft/final option
 \DeclareOption{draft}{\setlength\overfullrule{5pt}}
@@ -378,7 +385,7 @@
 
 % makes a typical resume job / education entry
 % usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
-\newcommand*{\cventry}[7][.25em]{}
+\newcommand*{\cventry}[7][.5em]{}
 
 % makes a resume entry with a proficiency comment
 % usage: \cvitemwithcomment[spacing]{header}{text}{comment}

@@ -6,14 +6,18 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,a4paper,sans]{moderncv}
+\documentclass[10pt,a4paper,bitstream]{moderncv}
 
 % possible options include font size ('10pt', '11pt' and '12pt'),
 % paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper',
 % 'executivepaper' and 'landscape') and font family ('sans' and
 % 'roman')
 
-\moderncvstyle{banking}
+%\renewcommand{\familydefault}{bitstream-charter} % to set the default font;
+%use '\sfdefault' for the default sans serif font, '\rmdefault' for
+%the default roman one, or any tex font name
+
+\moderncvstyle{casual}
 % style options are 'casual' (default), 'classic', 'oldstyle' and
 % 'banking'
 
@@ -21,7 +25,6 @@
 % color options 'blue' (default), 'orange', 'green', 'red', 'purple',
 % 'grey' and 'black'
 
-%\renewcommand{\familydefault}{\rmdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 \nopagenumbers{}
 
 \usepackage[utf8]{inputenc}
@@ -32,11 +35,11 @@
 \name{Sanjoy}{Das}
 \title{Software Engineer}
 % \address{street and number}{postcode city}{country}
-\phone[mobile]{+91~8001617087}
+\phone[mobile]{+1-408-816-9041}
 \email{sanjoy@playingwithpointers.com}
 \homepage{http://playingwithpointers.com}
 \github{http://github.com/sanjoy/}
-\photo[64pt][0.6pt]{me}
+%\photo[64pt][0.6pt]{me}
 
 \newcommand{\tinygap}{\vspace{7 pt}}
 \newcommand{\largegap}{\vspace{10 pt}}
@@ -47,14 +50,27 @@
 
 \section{Summary}
 \tinygap
-
-Software engineer particularly interested in the design and
-implementation of compilers and virtual machines.
+\cvitem{}{Software engineer particularly interested in the design and
+  implementation of compilers and virtual machines.}{}
 
 \largegap
 \section{Work Experience}
 
 \tinygap
+\cventry{August 2013--Current}{
+  Software Engineer, JVM
+}{
+  Azul Systems
+}{
+  Sunnyvale, California
+}{}{
+%
+  Compilers, mostly.
+%
+}
+
+\tinygap
+
 \cventry{May 2012--July 2012}{
   Software Engineering Intern
 }{
@@ -63,11 +79,9 @@ implementation of compilers and virtual machines.
   München, Germany
 }{}{
 %
-  \tinygap
-  I was an intern on the \textbf{V8 / Chrome} team for eleven weeks.
-  I worked on moving some of the optimization phases run by optimizing
-  Javascript compiler to a second thread with the purpose of reducing
-  jitter in certain kinds of workloads.
+  I was an intern on the \textbf{V8 / Chrome} and worked on moving
+  some of the optimization phases run by optimizing Javascript
+  compiler to a dedicated compiler thread.
 %
 }
 
@@ -78,12 +92,8 @@ implementation of compilers and virtual machines.
   Igalia
 }{}{}{
 %
-  \tinygap
   I worked on \textbf{gdb}, implementing a new, simpler debug info
-  protocol for JIT compilers. Instead of reading debug information off
-  a DWARF table, gdb now allows JIT compilers to emit debug
-  information in a custom format and register a reader plugin that
-  understands the same. The functionality ships with gdb 7.4+.
+  protocol for JIT compilers.
 %
 }
 
@@ -94,11 +104,10 @@ implementation of compilers and virtual machines.
   The LLVM Compiler Infrastructure
 }{}{}{
 %
-  \tinygap I implemented support for \textbf{segmented stacks} on the
-  x86 platform for \textbf{llvm}. This feature allows generated code
+  I implemented support for \textbf{segmented stacks} on the x86
+  platform for \textbf{llvm}. This feature allows llvm generated code
   to allocate stack space incrementally instead of pessimistically
-  allocating a large chunk at thread creation. The code ships with
-  llvm 3.0+.
+  allocating a large chunk at thread creation.
 %
 }
 
@@ -106,24 +115,32 @@ implementation of compilers and virtual machines.
 \section{Skills \& Expertise}
 
 \tinygap
-\subsection{Programming Languages}
-C++, C, Haskell, Java, Agda, Python.
+\subsection{Skills}
+\cvitem{}{%
+  {\small My core competencies are virtual machines and compilers.
+    Besides that I have dabbled in type-theory and programming
+    language semantics.  I'm most comfortable with x86 / linux
+    systems.}}{}
 
 \tinygap
-\subsection{Specialties}
-My core competencies are virtual machines and compilers.  Besides that
-I have dabbled in type-theory and programming language semantics.  I'm
-most comfortable with x86 / linux systems.
+\subsection{Programming Languages}
+\cvitem{}{%
+  {\small My love for interesting programming challenges trumps my
+    love for interesting programming languages; and for this reason
+    most of the production code I've written is in \textbf{C++} and
+    \textbf{C}.  I have used \textbf{Haskell} in non-trivial personal
+    projects and am familiar with \textbf{Java}, \textbf{Agda} and
+    \textbf{Python}.}}  {}
 
 \largegap
 \section{Education}
 
 \tinygap
-\cventry{2008-2013}{Master of Science}{Indian Institute of Technology Kharagpur}{}{}{
-  Mathematics \& Computing}
+\vbox{\cventry{2008--2013}{Master of Science}{Indian Institute of Technology Kharagpur}{}{}{
+  Mathematics \& Computing}}
 
 \tinygap
-\cventry{2008-2013}{Bachelor of Science}{Indian Institute of Technology Kharagpur}{}{}{
-  Mathematics \& Computing}
+\vbox{\cventry{2008--2013}{Bachelor of Science}{Indian Institute of Technology Kharagpur}{}{}{
+  Mathematics \& Computing}}
 
 \end{document}

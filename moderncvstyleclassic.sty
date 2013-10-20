@@ -12,6 +12,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{moderncvstyleclassic}[2013/02/09 v1.3.0 modern curriculum vitae and letter style scheme: classic]
 
+\usepackage{xspace}
+
 
 %-------------------------------------------------------------------------------
 %                required packages
@@ -192,10 +194,10 @@
 \renewcommand*{\cventry}[7][.25em]{%
   \cvitem[#1]{#2}{%
     {\bfseries#3}%
-    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
-    \ifthenelse{\equal{#5}{}}{}{, #5}%
-    \ifthenelse{\equal{#6}{}}{}{, #6}%
-    .\strut%
+    \ifthenelse{\equal{#4}{}}{}{ \textcolor{color1}{\textbf{|}} {#4}}%
+    \ifthenelse{\equal{#5}{}}{}{ \textcolor{color1}{\textbf{|}} #5}%
+    \ifthenelse{\equal{#6}{}}{}{ \textcolor{color1}{\textbf{|}} #6}%
+    \strut%
     \ifx&#7&%
       \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
 

@@ -196,12 +196,9 @@
     {\listitemsymbol\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}}}
 
 \renewcommand*{\cventry}[7][.25em]{
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
-	  {\bfseries #4} & {\bfseries #5} \\%
-	  {#3\ifthenelse{\equal{#6}{}}{}{, #6}} & {#2}\\%
-  \end{tabular*}%
-  \ifx&#7&%
-    \else{\\\vbox{\small#7}}\fi%
+  {\bfseries #4} \hfill {\textit{#5}} \\%
+  {\bfseries #6} \hfill {\textit{#2}} \\%
+  \vbox{\small#7}
   \par\addvspace{#1}}
 
 \newbox{\cvitemwithcommentmainbox}
